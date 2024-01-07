@@ -11,7 +11,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
     <!-- Page Title  -->
-    <title>VeGo Dashboard</title>
+    <title>Admin Dashboard</title>
     
 
 
@@ -30,84 +30,6 @@
 
     <!-- Include Firebase JavaScript SDK -->
 
-    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-messaging.js"></script>
-    <script>
- 
-        const firebaseConfig = {
-            apiKey: "AIzaSyDLNzkSKuszYtoe2U84Uvp7J27Hehg1pd4",
-            authDomain: "vegobike-74d6e.firebaseapp.com",
-            projectId: "vegobike-74d6e",
-            storageBucket: "vegobike-74d6e.appspot.com",
-            messagingSenderId: "659522969918",
-            appId: "1:659522969918:web:825ffc8c93c7a2686d8c6f",
-            measurementId: "G-61BLFF3764"
-        };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const messaging = firebase.messaging();
-    
-    
-    messaging.onMessage(function (payload) {
-        console.log(payload);
-        const notificationOption={
-            body:payload.notification.body,
-            icon:payload.notification.icon
-        };
-            var x = document.getElementById("myAudio"); 
-            var link = payload.notification.click_action;
-            $("#modalAlert").modal('show');
-            $("#vehicleDetail").text(payload.notification.body);
-            $("#viewDetail").attr('href', link);
-            x.play();
-             var notification=new Notification(payload.notification.title,notificationOption);
-             notification.onclick=function (ev) {
-                ev.preventDefault();
-                window.open(payload.notification.click_action,'_blank');
-                notification.close();
-             }
-    });
-
-
-    messaging.requestPermission()
-  .then(() => {
-    console.log('Notification permission granted.');
-    // Retrieve the registration token
-    messaging.getToken()
-      .then((currentToken) => {
-        if (currentToken) 
-        {
-            $.ajax({
-                url:"{{url('update-token')}}",
-                type:"GET",
-                data:{token:currentToken},
-                success:function(record)
-                {
-                    console.log("Token :", record);
-                }
-            });
-          // Send this token to your server for later use
-        } else {
-          console.log('No registration token available.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error getting registration token:', error);
-      });
-  })
-  .catch((error) => {
-    console.error('Unable to get permission to notify:', error);
-  });
-
-
-</script>
-<script>
-    if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('{{url("firebase-messaging-sw.js")}}')
-      .then()
-      .catch(err => console.error('Error', err));
-  }
-    </script>
 
 </head>
 

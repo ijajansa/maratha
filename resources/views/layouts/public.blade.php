@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
     <!-- Page Title  -->
-    <title>VeGO | Panel</title>
+    <title>MARATHA SAMAJ | Login Panel</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('assets/css/dashlite.css?ver=2.7.0')}}">
     <link id="skin-default" rel="stylesheet" href="{{asset('assets/css/theme.css?ver=2.7.0')}}">
@@ -27,7 +27,7 @@
             }
 
             .nk-content{
-                background:linear-gradient(0deg, rgb(48 71 113), rgb(56 48 113 / 21%)), url("{{asset('assets/pictures/login_background.jpg')}}");
+                background:linear-gradient(0deg, rgb(48 71 113), rgb(56 48 113 / 21%)), url("{{asset('assets/background.jpg')}}");
       
                 background-size: cover;
                 height: 100%;
@@ -46,17 +46,8 @@
                         <div class="nk-block nk-block-middle nk-auth-body  wide-xs" style="box-shadow:1px 1px 10px rgba(0,0,0,0.1);background: #fff;border-radius: 20px;">
                             <div class="brand-logo text-center">
                                 <a href="#" class="logo-link">
-                                <!-- <img class="logo-light logo-img logo-img-lg" src="{{asset('images/logo.png')}}" srcset="{{asset('images/logo2x.png')}} 2x" alt="logo">
-                                    <img class="logo-dark logo-img logo-img-lg" src="{{asset('images/logo-dark.png')}}" srcset="{{asset('images/logo-dark2x.png')}} 2x" alt="logo-dark"> -->
-                                    <div style="display: inline-block;background: #304771;width: 120px;height: 120px;border-radius: 50%;">
-                                        <img src="{{url('assets/pictures/app_logo.png')}}" style="
-                                        width: 90px;
-                                        height: 90px;
-                                        padding: 5px;
-                                        margin-top: 9px;
-                                        border-radius: 30% 50% 0 50%;
-                                        ">
-                                    </div>
+                                 <img class="" src="{{asset('assets/logo.png')}}" style="max-width: 50%" srcset="{{asset('assets/logo2x.png')}} 2x" alt="logo">
+                                    
                                     <!-- <h3>VeGo Bike</h3> -->
                                 </a>
                             </div>

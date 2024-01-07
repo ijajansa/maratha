@@ -16,28 +16,29 @@
 						<div class="nk-block-head" style="display: flex;">
 
 							<div class="nk-block-head-content" style="width: 50%">
-								<h4 class="nk-block-title">All System Users</h4>
+								<h4 class="nk-block-title">सभासदे</h4>
 							</div>
-							<div class="nk-block-head-content" style="text-align: end;width: 50%">
+							{{-- <div class="nk-block-head-content" style="text-align: end;width: 50%">
 								<div class="toggle-wrap nk-block-tools-toggle">
 									<a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
 									<div class="toggle-expand-content" data-content="pageMenu">
 										<a href="{{url('users/add')}}" class="btn btn-primary nk-block-tools-opt"><em class="icon ni ni-plus"></em><span>Add New User</span></a>
 									</div>
-								</div><!-- .toggle-wrap -->
-							</div><!-- .nk-block-head-content -->
+								</div>
+							</div> --}}
 						</div>
 						<div class="card card-preview">
 							<div class="card-inner">
 
 								<table class="nowrap table" id="myTable">
 									<thead>
-										<th>Id</th>
-										<th>Name</th>
-										<th>Email ID</th>
-										<th>Contact Number</th>
-										<th>Status</th>
-										<th>Verify</th>
+										<th>अनुक्रमणिका</th>
+										<th>चित्र</th>
+										<th>नाव</th>
+										<th>वय</th>
+										<th>मोबाइल नंबर</th>
+										<th>आधारकार्ड नंबर</th>
+										<th>व्यवसाय</th>
 										<th>Action</th>                              
 									</thead>
 									<tbody>
@@ -91,63 +92,46 @@
 				"mData":"id"
 			},
 			{
+				"targets":-1,
+				"mData": "id",
+				"bSortable": false,
+				"ilter":false,
+				"mRender": function(data, type, row){
+					if(row.profile_image!=null)
+					{
+						return '<img width="50px" height="50px" src={{url("storage/app")}}/'+row.profile_image+'>';
+					}
+					else
+					{
+						return 'Image Not Found';
+					}
+				},
+
+			},
+		
+			{
 				"mData":"name"
 			},
 			{
-				"mData":"email"
+				"mData":"age"
 			},
 			{
-				"mData":"contact_number"
+				"mData":"mobile_number"
 			},
 			{
+				"mData":"aadhaar_card_number"
+			},
+			{
+				"mData":"profession"
+			},
+			
+				{
 				"targets":-1,
 				"mData": "id",
 				"bSortable": false,
 				"ilter":false,
 				"mRender": function(data, type, row){
-					if(row.is_active==1)
-					{
-						return '<div class="tb-odr-btns d-none d-md-inline"><a href={{url("users")}}/status/'+row.id+' class="btn btn-sm btn-success">Active</a></div>';
-					}
-					else
-					{
-						return '<div class="tb-odr-btns d-none d-md-inline"><a href={{url("users")}}/status/'+row.id+' class="btn btn-sm btn-danger">Inactive</a></div>';
-					}
-				},
-
-			},
-			{
-				"targets":-1,
-				"mData": "id",
-				"bSortable": false,
-				"ilter":false,
-				"mRender": function(data, type, row){
-					if(row.is_document_verified==1)
-					{
-						return '<div class="tb-odr-btns d-none d-md-inline"><a href={{url("users")}}/verify/'+row.id+' class="btn btn-sm btn-outline-warning">Verify Document</a></div>&nbsp;&nbsp;<div class="tb-odr-btns d-none d-md-inline"><a href={{url("users")}}/reject/'+row.id+' class="btn btn-sm btn-danger">Reject</a></div>';
-					}
-					else if(row.is_document_verified==2)
-					{
-						return '<div class="tb-odr-btns d-none d-md-inline"><a href=javascript:void(0) class="btn btn-sm btn-success">Verified</a></div>';
-					}
-					else if(row.is_document_verified==3)
-					{
-						return '<div class="tb-odr-btns d-none d-md-inline"><a href= href=javascript:void(0) class="btn btn-sm btn-outline-danger">Rejected</a></div>';
-					}
-					else
-					{
-						return 'not uploaded';
-					}
-				},
-
-			},
-			{
-				"targets":-1,
-				"mData": "id",
-				"bSortable": false,
-				"ilter":false,
-				"mRender": function(data, type, row){
-					return '<a class="btn btn-primary btn-sm" href={{url("users")}}/edit/'+row.id+'><span><em class="icon ni ni-edit"></em></span>&nbsp;&nbsp;Details</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+					return '<a class="btn btn-primary btn-sm" href={{url("users")}}/edit/'+row.id+'><span><em class="icon ni ni-edit"></em></span>&nbsp;&nbsp;View Details</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-danger btn-sm" href=javascript:void(0) onclick="deleteRecord('+row.id+')"><span><em class="icon ni ni-trash"></em></span></a>';
 				},
 
 			},

@@ -4,7 +4,7 @@
     <div class="card-inner card-inner-lg">
         <div class="nk-block-head">
             <div class="nk-block-head-content">
-                <h4 class="nk-block-title text-center">Log in to access your account</h4>
+                <h4 class="nk-block-title text-center">तुमच्या खात्यात प्रवेश करण्यासाठी लॉग इन करा</h4>
 
             </div>
         </div>
@@ -12,7 +12,7 @@
             @csrf
             <div class="form-group">
                 <div class="form-label-group">
-                    <label class="form-label" for="default-01">{{ __('Email Address') }}</label>
+                    <label class="form-label" for="default-01">{{ __('ई-मेल') }}</label>
                 </div>
                 <div class="form-control-wrap">
                  <input name="email" type="email" placeholder="Email Address" id="default-01" class="form-control form-control-md @error('email') is-invalid @enderror" value="{{ old('email') }}" required="">
@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <div class="form-label-group">
-                <label class="form-label" for="password">{{ __('Password') }}</label>
+                <label class="form-label" for="password">{{ __('पासवर्ड ') }}</label>
 
             </div>
             <div class="form-control-wrap">
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-lg btn-primary btn-block">Log in</button>
+            <button class="btn btn-lg btn-primary btn-block">लॉगिन करा</button>
         </div>
     </form>
 

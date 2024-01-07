@@ -2,6 +2,7 @@
 <div class="nk-header nk-header-fixed is-light">
     <div class="container-fluid">
         <div class="nk-header-wrap">
+           <h5>सकल मराठा समाज सेवा संघ , आरग</h5>
             <div class="nk-menu-trigger d-xl-none ml-n1">
                 <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
             </div>
@@ -10,7 +11,8 @@
                     <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                     <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                 </a>
-            </div> --><!-- .nk-header-brand -->
+            </div> -->
+            <!-- .nk-header-brand -->
             
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
